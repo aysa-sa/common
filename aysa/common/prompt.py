@@ -4,7 +4,7 @@
 # ~
 
 from inspect import getdoc
-from doctop import docopt, DocoptExit
+from docopt import docopt, DocoptExit
 
 
 def docstring(obj, tmpl=' \n{}\n \n'):
@@ -16,15 +16,22 @@ def docstring(obj, tmpl=' \n{}\n \n'):
 
 
 def _extras(help, version, options, doc):
-    if help and any((o.name in ('-h', '--help')) and o.value
-                    for o in options):
-        raise ValueError(doc)
+    if help and any((o.name in ('-h', '--help')) and o.value for o in options):
+        raise HelpCommand(doc)
+    if version and any(o.name == '--version' and o.value for o in options):
+        print(version)
 
 
 def docoptions(obj, *args, **kwargs):
     obj = docstring(obj)
     try:
         docopt.extras = _extras
-        return docopt.docopt(obj, *args, **kwargs), obj
+        return docopt(obj, *args, **kwargs), obj
     except DocoptExit:
         raise ValueError(obj)
+
+
+class HelpCommand(Exception):
+    def __init__(self, doc):
+        super().__init__()
+        self.doc = doc
