@@ -12,4 +12,4 @@ Del lat. commūnis.
 6. `m.` Comunidad, generalidad de personas.
 7. `m.` retrete (‖ aposento).
 
-> Source https://www.wordreference.com/es/en/frames.aspx?es=com%C3%BAn
+> Source https://dle.rae.es/com%C3%BAn

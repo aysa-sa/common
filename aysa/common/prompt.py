@@ -24,7 +24,7 @@ class WritableObject:
 
     def parse(self, *args, **kwargs):
         if self.__parser is None:
-            raise NotImplementedError()
+            raise NotImplementedError('Función de "parseo" no definida.')
         return self.__parser(*args, **kwargs)
 
     def write(self, *args, **kwargs):
