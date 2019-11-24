@@ -1,7 +1,8 @@
 # Author: Alejandro M. BERNARDIS
 # Email alejandro.bernardis at gmail.com
 # Created: 2019/11/23 08:53
-# ref: https://github.com/viewfinderco/viewfinder/blob/master/backend/base/counters.py
+
+# El ejemplo fue tomado de: https://github.com/viewfinderco/viewfinder
 
 import time
 from dotted.collection import DottedDict
@@ -64,7 +65,7 @@ class TotalCounter(Counter):
 
 class DeltaCounter(TotalCounter):
     def sample(self, other):
-        return other - self.raw
+        return self.raw - other
 
 
 class AverageCounter(Counter):
@@ -85,10 +86,10 @@ class AverageCounter(Counter):
         self._base_counter += self._factor
 
     def sample(self, other):
-        diff = other[1] - self.raw[1]
+        diff = self.raw[1] - other[1]
         if diff == 0:
             return 0
-        return (other[0] - self.raw[0]) / diff
+        return (self.raw[0] - other[0]) / diff
 
 
 class RateCounter(TotalCounter):
@@ -101,10 +102,10 @@ class RateCounter(TotalCounter):
         return self._counter, self._func()
 
     def sample(self, other):
-        diff = other[1] - self.raw[1]
+        diff = self.raw[1] - other[1]
         if diff == 0:
             return 0
-        return (other[0] - self.raw[0]) * self._factor / diff
+        return (self.raw[0] - other[0]) * self._factor / diff
 
 
 class CounterManager(DottedDict):
@@ -149,14 +150,3 @@ def average_counter(name, manager=global_manager, **kwargs):
 
 def rate_counter(name, factor=1, manager=global_manager, **kwargs):
     return manager.register(RateCounter(name, factor=factor, **kwargs))
-
-
-class Meter:
-    def __init__(self):
-        self.__counters = {}
-
-    def add(self, key, value):
-        pass
-
-    def sample(self):
-        pass
