@@ -32,8 +32,8 @@ setup(
 
     install_requires=[
         'requests==2.22.0',
-        'docopt==',
-        'dotted==',
+        'docopt==0.6.2',
+        'dotted==0.1.8',
     ],
 
     classifiers=[
