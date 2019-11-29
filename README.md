@@ -1,4 +1,4 @@
-# common (común) 
+# common (común)
 
 ```
 Del lat. commūnis.
@@ -14,7 +14,7 @@ Del lat. commūnis.
 
 > Source https://dle.rae.es/com%C3%BAn
 
-# Common Library (v2019.11.28)
+# Python Common Library (v2019.11.28)
 
 ## Instalación
 
@@ -50,7 +50,7 @@ Se requiere la versión de `python` **>=3.6**, en adelante.
 
 ```bash
 # clonamos el repositorio
-> git clone https://github.com/aysa-sa/common.git --branch 2019.11.28 --single-branch 
+> git clone https://github.com/aysa-sa/common.git --branch 2019.11.28 --single-branch
 
 # ingresamos al directorio del repositorio
 > cd common

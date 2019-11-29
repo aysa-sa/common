@@ -6,7 +6,7 @@ SEGMENT = 'dev'
 VERSION = (2019, 11, 28, SEGMENT, 0)
 
 __title__ = 'common'
-__summary__ = 'Common Library.'
+__summary__ = 'AySA Python Common Library.'
 __uri__ = 'https://github.com/aysa-sa/common'
 __issues__ = 'https://github.com/aysa-sa/common/issues'
 __version__ = '.'.join([str(x) for x in VERSION])
