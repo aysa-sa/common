@@ -14,7 +14,7 @@ Del lat. commūnis.
 
 > Source https://dle.rae.es/com%C3%BAn
 
-# Python Common Library (v2019.11.28)
+# AySA / Python Common Library (v2019.11.28)
 
 ## Instalación
 
